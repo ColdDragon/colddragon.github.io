@@ -50,10 +50,10 @@
                 #Match Group administrators
                 #AuthorizedKeysFile **PROGRAMDATA**/ssh/administrators_authorized_keys
                 ```
-        - mkdir "$HOME\.ssh" : .ssh경로 생성
-        - authorized_keys 파일 생성 및 권한 변경
+        - .ssh경로 생성, authorized_keys 파일 생성 및 권한 변경
 
             ```powershell
+            mkdir "$HOME\.ssh"
             $authorizedKeyFilePath = “$HOME\.ssh\authorized_keys”
             New-Item $authorizedKeyFilePath
             notepad.exe $authorizedKeyFilePath
