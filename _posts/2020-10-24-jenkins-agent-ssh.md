@@ -40,13 +40,17 @@
         - powershell을 관리자 권한으로 실행한 상태에서 진행
         - `notepad.exe $env:PROGRAMDATA\ssh\sshd_config`
             - 아래 값들의 주석을 제거하고 변경
-                ```PubkeyAuthentication yes
+                ```
+                PubkeyAuthentication yes
                 PasswordAuthentication no
-                PermitEmptyPasswords no```
+                PermitEmptyPasswords no
+                ```
             - $HOME\.ssh\authorized_keys 파일을 사용하는 방식으로 변경하기 위해 아래 내용을 주석 처리(#)
-                ```#Match Group administrators
+                ```
+                #Match Group administrators
                 #AuthorizedKeysFile
-                #**PROGRAMDATA**/ssh/administrators_authorized_keys```
+                #**PROGRAMDATA**/ssh/administrators_authorized_keys
+                ```
         - mkdir "$HOME\.ssh" : .ssh경로 생성
         - authorized_keys 파일 생성 및 권한 변경
 
@@ -149,7 +153,8 @@
             chmod 600 ~./ssh/id_rsa
             chmod 644 ~./ssh/id_ras.pub
             chmod 644 ~./ssh/authorized_keys
-            chmod 644 ~./ssh/known_hosts```
+            chmod 644 ~./ssh/known_hosts
+            ```
     - jenkins credentials 추가
         - Jenkins >> Jenkins 관리 >> Manage Credentials >> (global) >> Add Credentials
 
