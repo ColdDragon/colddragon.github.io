@@ -48,8 +48,7 @@
             - $HOME\.ssh\authorized_keys 파일을 사용하는 방식으로 변경하기 위해 아래 내용을 주석 처리(#)
                 ```
                 #Match Group administrators
-                #AuthorizedKeysFile
-                #**PROGRAMDATA**/ssh/administrators_authorized_keys
+                #AuthorizedKeysFile **PROGRAMDATA**/ssh/administrators_authorized_keys
                 ```
         - mkdir "$HOME\.ssh" : .ssh경로 생성
         - authorized_keys 파일 생성 및 권한 변경
@@ -126,7 +125,7 @@
                 ```
 
             - 작업 스캐줄러 등록
-                - `- ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`
+                - `-ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`
 
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png)
 
