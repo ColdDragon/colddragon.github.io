@@ -126,7 +126,7 @@
                 ```
 
             - 작업 스캐줄러 등록
-                - `- ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`
+                - [`- ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/wslbridge.ps1)
 
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png)
 
