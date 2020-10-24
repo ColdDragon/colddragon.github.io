@@ -88,7 +88,7 @@
             - **Port 22 → Port 2022 : Windows가 점유한 22포트와 충돌나기 때문에 2022로 변경**
         - `sudo service ssh --full-restart : ssh 서비스 등록`
         - powersell용 스크립트 파일을 생성하여 작업 스캐줄러에 등록
-            - wslbridge.ps1 파일에 저장
+            - [wslbridge.ps1](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/wslbridge.ps1) 파일에 저장
 
                 ```powershell
                 $remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
@@ -126,7 +126,7 @@
                 ```
 
             - 작업 스캐줄러 등록
-                - [`- ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/wslbridge.ps1)
+                - `- ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`
 
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png)
 
