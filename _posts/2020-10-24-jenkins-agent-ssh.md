@@ -82,9 +82,9 @@
 
     - WSL2에서 ssh설정(Ubuntu v18.04) - ([https://parksb.github.io/article/21.html](https://parksb.github.io/article/21.html), [https://m.blog.naver.com/seongjin0526/221778212779](https://m.blog.naver.com/seongjin0526/221778212779))
         - hyper-V를 통해 내부 포트가 지정되고 부팅시마다 포트가 변경되어 자동으로 포트 포워딩을 해야 함
-        - `sudo ssh-keygen -A : public key 생성`
         - `sudo vi /etc/ssh/sshd_config`
-            - **Port 22 → Port 2022 : Windows가 점유한 22포트와 충돌나기 때문에 2022로 변경**
+            - `Port 2022` : Windows가 점유한 22포트와 충돌나기 때문에 2022로 변경
+            - `PubkeyAuthentication yes`
         - `sudo service ssh --full-restart : ssh 서비스 등록`
         - powersell용 스크립트 파일을 생성하여 작업 스캐줄러에 등록
             - [wslbridge.ps1](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/wslbridge.ps1) 파일에 저장
