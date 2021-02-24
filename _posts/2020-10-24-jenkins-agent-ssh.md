@@ -151,11 +151,11 @@
         - `ssh {userid}@{ip address} : agent 접속`
         - linux환경인 경우 권한 설정
             ```
-            chmod 700 ~./ssh
-            chmod 600 ~./ssh/id_rsa
-            chmod 644 ~./ssh/id_ras.pub
-            chmod 644 ~./ssh/authorized_keys
-            chmod 644 ~./ssh/known_hosts
+            chmod 700 ~/.ssh
+            chmod 600 ~/.ssh/id_rsa
+            chmod 644 ~/.ssh/id_ras.pub
+            chmod 644 ~/.ssh/authorized_keys
+            chmod 644 ~/.ssh/known_hosts
             ```
     - jenkins credentials 추가
         - Jenkins >> Jenkins 관리 >> Manage Credentials >> (global) >> Add Credentials
