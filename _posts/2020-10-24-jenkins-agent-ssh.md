@@ -90,7 +90,8 @@
             - [wslbridge.ps1](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/wslbridge.ps1) 파일에 저장
 
                 ```powershell
-                $remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
+                C:\Windows\System32\bash.exe -c "sudo service ssh start"
+                $remoteport = C:\Windows\System32\bash.exe -c "ifconfig eth0 | grep 'inet '"
                 $found = $remoteport -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 
                 if( $found ){
@@ -103,12 +104,14 @@
                 #[Ports]
 
                 #All the ports you want to forward separated by coma
-                $ports=@(22,2022,80,443,10000,3000,5000);
+                $ports=@(2022);
+
 
                 #[Static ip]
                 #You can change the addr to your ip config to listen to a specific address
                 $addr='0.0.0.0';
                 $ports_a = $ports -join ",";
+
 
                 #Remove Firewall Exception Rules
                 iex "Remove-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' ";
