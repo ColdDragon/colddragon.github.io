@@ -1,4 +1,5 @@
-$remoteport = bash.exe -c "ifconfig eth0 | grep 'inet '"
+C:\Windows\System32\bash.exe -c "sudo service ssh start"
+$remoteport = C:\Windows\System32\bash.exe -c "ifconfig eth0 | grep 'inet '"
 $found = $remoteport -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
 
 if( $found ){
@@ -11,7 +12,7 @@ if( $found ){
 #[Ports]
 
 #All the ports you want to forward separated by coma
-$ports=@(22,2022,80,443,10000,3000,5000);
+$ports=@(2022);
 
 
 #[Static ip]
