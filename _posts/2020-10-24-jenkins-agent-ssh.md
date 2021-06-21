@@ -81,6 +81,8 @@
                     - `powershell -Command "chcp 65001 ; cd **d:\Jenkins** ; java -jar remoting.jar -workDir **d:\Jenkins** -jar-cache **d:\Jenkins/remoting/jarCache**" ; exit 0 ; rem`
 
     - WSL2에서 ssh설정(Ubuntu v18.04) - ([https://parksb.github.io/article/21.html](https://parksb.github.io/article/21.html), [https://m.blog.naver.com/seongjin0526/221778212779](https://m.blog.naver.com/seongjin0526/221778212779))
+        - WSL2 설치 : https://www.44bits.io/ko/post/wsl2-install-and-basic-usage
+        - WSL에서 ssh설치 : https://www.tuwlab.com/ece/29302
         - hyper-V를 통해 내부 포트가 지정되고 부팅시마다 포트가 변경되어 자동으로 포트 포워딩을 해야 함
         - `sudo vi /etc/ssh/sshd_config`
             - `Port 2022` : Windows가 점유한 22포트와 충돌나기 때문에 2022로 변경
@@ -132,6 +134,7 @@
                 - `-ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`
 
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png)
+                    ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/jobscheduler.png)
 
         - jenkins agent 설정
             - 기본 설정
