@@ -131,9 +131,12 @@
                 ```
 
             - 작업 스캐줄러 등록
-                - `-ExecutionPolicy Bypass C:\Users\{Username}\wslbridge.ps1`
+                - 동작 속성에서 프로그래/스크립트
+                    - powershell.exe의 전체 경로로 설정 : C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe
+                - `-ExecutionPolicy Bypass {복사한 전체 경로}\wslbridge.ps1`
 
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png)
+                - 로그인한 사용자로 설정하고 암호를 입력해야함
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/jobscheduler.png)
 
         - jenkins agent 설정
