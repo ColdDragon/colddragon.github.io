@@ -9,28 +9,28 @@
     - Windows 10의 Openssh 서비스를 이용([https://lucidmaj7.tistory.com/178](https://lucidmaj7.tistory.com/178))
         - Windows **설정**에서 **앱**으로 진입
 
-            ![jenkins_ssh_res/Untitled.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled.png)
+            ![jenkins_ssh_res/Untitled.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled.png){: width="100%" height="100%"}
 
         - 앱에서 **선택적 기능**으로 진입
 
-            ![jenkins_ssh_res/Untitled%201.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%201.png)
+            ![jenkins_ssh_res/Untitled%201.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%201.png){: width="100%" height="100%"}
 
         - **기능 추가** 로 진입
 
-            ![jenkins_ssh_res/Untitled%202.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%202.png)
+            ![jenkins_ssh_res/Untitled%202.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%202.png){: width="100%" height="100%"}
 
         - 검색창에서 openssh입력하여 설치
 
-            ![jenkins_ssh_res/Untitled%203.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%203.png)
+            ![jenkins_ssh_res/Untitled%203.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%203.png){: width="100%" height="100%"}
 
     - sshd 서비스 실행
         - powershell을 관리자 권한으로 오픈
 
-            ![jenkins_ssh_res/Untitled%204.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%204.png)
+            ![jenkins_ssh_res/Untitled%204.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%204.png){: width="100%" height="100%"}
 
         - sshd 서비스를 자동실행으로 등록
 
-            ![jenkins_ssh_res/Untitled%205.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%205.png)
+            ![jenkins_ssh_res/Untitled%205.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%205.png){: width="100%" height="100%"}
 
             ```
             C:\>Start-Service -Name sshd
@@ -65,15 +65,15 @@
         - jenkins agent 설정
             - Jenkins >> Jenkins 관리 >> 노드 관리 >> 신규 노드
 
-                ![jenkins_ssh_res/Untitled%206.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%206.png)
+                ![jenkins_ssh_res/Untitled%206.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%206.png){: width="100%" height="100%"}
 
             - 기본 설정
 
-                ![jenkins_ssh_res/Untitled%207.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%207.png)
+                ![jenkins_ssh_res/Untitled%207.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%207.png){: width="100%" height="100%"}
 
             - 고급 설정에서 port과 command 설정
 
-                ![jenkins_ssh_res/Untitled%208.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%208.png)
+                ![jenkins_ssh_res/Untitled%208.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%208.png){: width="100%" height="100%"}
 
                 - Jave.exe를 Path환경 설정으로 등록
                 - Prefix Start Agent Command
@@ -135,18 +135,18 @@
                     - powershell.exe의 전체 경로로 설정 : C:\Windows\system32\WindowsPowerShell\v1.0\powershell.exe
                 - `-ExecutionPolicy Bypass {복사한 전체 경로}\wslbridge.ps1`
 
-                    ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png)
+                    ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png){: width="100%" height="100%"}
                 - 로그인한 사용자로 설정하고 암호를 입력해야함
-                    ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/jobscheduler.png)
+                    ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/jobscheduler.png){: width="100%" height="100%"}
 
         - jenkins agent 설정
             - 기본 설정
 
-                ![jenkins_ssh_res/Untitled%2010.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2010.png)
+                ![jenkins_ssh_res/Untitled%2010.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2010.png){: width="100%" height="100%"}
 
             - 고급 설정
 
-                ![jenkins_ssh_res/Untitled%2011.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2011.png)
+                ![jenkins_ssh_res/Untitled%2011.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2011.png){: width="100%" height="100%"}
 
 - master에서 ssh 설정(비대칭 암호키 사용)
     - agent 서버에 public key로 연결만 가능하면 되기에 sshd 서비스를 구동할 필요는 없다.
@@ -167,8 +167,8 @@
     - jenkins credentials 추가
         - Jenkins >> Jenkins 관리 >> Manage Credentials >> (global) >> Add Credentials
 
-            ![jenkins_ssh_res/Untitled%2012.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2012.png)
+            ![jenkins_ssh_res/Untitled%2012.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2012.png){: width="100%" height="100%"}
 
         - 아까 생성한 비밀키를 입력(C:\Users\{Username}\.ssh\id_rsa)
 
-            ![jenkins_ssh_res/Untitled%2013.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2013.png)
+            ![jenkins_ssh_res/Untitled%2013.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%2013.png){: width="100%" height="100%"}
