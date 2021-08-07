@@ -1,4 +1,7 @@
 ## 안드로이드용 skia 엔진 빌드
+> Reference site
+> - https://skia.org/docs/user/download/
+> - https://skia.org/docs/user/build/
 
 - Download
   1. Install depot_tools and Git
