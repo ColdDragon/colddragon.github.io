@@ -28,3 +28,8 @@
 	  - `bash-3.2$ bin/gn args out/Debug --list`
   5. build
 	  - `bash-3.2$ ninja -C out/Static`
+- local setting
+	1. `bash-3.2$ export CPLUS_INCLUDE_PATH=/opt/local/include`
+	2. `bash-3.2$ export PATH=/xxx/depot_tools:$PATH`
+	3. `bash-3.2$ bin/gn gen out/arm64 --args='ndk="/xxx/android-ndk-r21e" target_cpu="arm64" is_official_build=false is_component_build=true is_debug=false'`
+	4. `bash-3.2$ ninja -C out/arm64`
