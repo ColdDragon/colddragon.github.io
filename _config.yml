@@ -280,6 +280,10 @@ defaults:
       share: true
       related: true
       
+
+comments: true
+
+
 discus: #colddragon.disqus.com
 
 #theme: jekyll-theme-midnight
