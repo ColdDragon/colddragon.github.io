@@ -279,5 +279,7 @@ defaults:
       comments: # true
       share: true
       related: true
+      
+discus: #colddragon.disqus.com
 
 #theme: jekyll-theme-midnight
