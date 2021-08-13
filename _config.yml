@@ -284,3 +284,5 @@ defaults:
 
 
 #theme: jekyll-theme-midnight
+
+theme: jekyll-theme-slate
