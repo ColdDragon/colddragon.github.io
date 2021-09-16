@@ -80,14 +80,22 @@
                     - Remote root directory 경로가 C드라이드(윈도우 설치 경로)인 경우는 필요가 없지만 다른 드라이브를 사용할 경우 powershell command를 직접 수정하여 등록
                     - `powershell -Command "chcp 65001 ; cd **d:\Jenkins** ; java -jar remoting.jar -workDir **d:\Jenkins** -jar-cache **d:\Jenkins/remoting/jarCache**" ; exit 0 ; rem`
 
-    - [WSL2에서 ssh설정(Ubuntu v18.04)](https://parksb.github.io/article/21.html)
-        - [https://m.blog.naver.com/seongjin0526/221778212779](https://m.blog.naver.com/seongjin0526/221778212779)
+    - WSL2에서 ssh설정(Ubuntu v18.04)
         - [WSL2 설치](https://www.44bits.io/ko/post/wsl2-install-and-basic-usage)
-            - `sudo echo "jenkins_agent ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers`
-            - `sudo apt update`
-            - `sudo apt upgrade`
-            - `sudo apt-get install openjdk-8-jdk`
-            - `sudo apt install net-tools`
+            - `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+            - `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+            - [Updating the WSL 2 Linux Kernal | Microsoft Docs](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package)
+            - Microsoft Store에서 Ubuntu 18.04 LTS설치                
+            - wsl 설치후 기본 작업들
+                - `Enter new UNIX username: jenkins_agent`
+                - `Enter new UNIX password:`
+                - `Retype new UNIX password:`
+                - `sudo vi /etc/sudoers`
+                    - `jenkins_agent ALL=(ALL:ALL) NOPASSWD: ALL`
+                - `sudo apt update`
+                - `sudo apt upgrade`
+                - `sudo apt-get install openjdk-8-jdk`
+                - `sudo apt install net-tools`
         - [WSL에서 ssh설치](https://www.tuwlab.com/ece/29302)
             - `sudo apt-get purge openssh-server`
             - `sudo apt-get install openssh-server`
