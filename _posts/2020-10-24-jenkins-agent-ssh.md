@@ -82,6 +82,11 @@
 
     - WSL2에서 ssh설정(Ubuntu v18.04) - ([https://parksb.github.io/article/21.html](https://parksb.github.io/article/21.html), [https://m.blog.naver.com/seongjin0526/221778212779](https://m.blog.naver.com/seongjin0526/221778212779))
         - WSL2 설치 : https://www.44bits.io/ko/post/wsl2-install-and-basic-usage
+            - `sudo echo "jenkins_agent ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers`
+            - `sudo apt update`
+            - `sudo apt upgrade`
+            - `sudo apt-get install openjdk-8-jdk`
+            - `sudo apt install net-tools`
         - WSL에서 ssh설치 : https://www.tuwlab.com/ece/29302
         - hyper-V를 통해 내부 포트가 지정되고 부팅시마다 포트가 변경되어 자동으로 포트 포워딩을 해야 함
         - `sudo vi /etc/ssh/sshd_config`
