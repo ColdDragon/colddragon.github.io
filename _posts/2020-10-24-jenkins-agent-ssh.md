@@ -92,12 +92,14 @@
             - `sudo apt-get purge openssh-server`
             - `sudo apt-get install openssh-server`
             - `sudo nano /etc/ssh/sshd_config`
-                `- Port 22
-                - PasswordAuthentication yes
-                - PubkeyAuthentication no
-                - PermitEmptyPasswords no`
-            - sudo service ssh --full-restart
-            - sudo service ssh restart
+                ```
+                Port 22
+                PasswordAuthentication yes
+                PubkeyAuthentication no
+                PermitEmptyPasswords no
+                ```
+            - `sudo service ssh --full-restart`
+            - `sudo service ssh restart`
         - hyper-V를 통해 내부 포트가 지정되고 부팅시마다 포트가 변경되어 자동으로 포트 포워딩을 해야 함
         - `sudo vi /etc/ssh/sshd_config`
             - `Port 2022` : Windows가 점유한 22포트와 충돌나기 때문에 2022로 변경
