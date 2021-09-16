@@ -138,6 +138,8 @@
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png){: width="100%" height="100%"}
                 - 로그인한 사용자로 설정하고 암호를 입력해야함
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/jobscheduler.png){: width="100%" height="100%"}
+                - 일괄 작업으로 로그온 설정                                https://urban1980.tistory.com/42#:~:text=%EC%9D%BC%EB%8B%A8%20%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC%20%3E%20%EB%A1%9C%EC%BB%AC%EB%B3%B4%EC%95%88,%EC%9D%84%20%ED%9A%8D%EB%93%9D%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.
+                - 서비스로 로그온 설정 : https://help.tableau.com/current/server/ko-kr/runas_security.htm
 
         - jenkins agent 설정
             - 기본 설정
