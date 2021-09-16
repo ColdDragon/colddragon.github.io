@@ -106,6 +106,11 @@
             - `PubkeyAuthentication yes`
         - `sudo service ssh --full-restart : ssh 서비스 등록`
         - `sudo apt install net-tools : ifconfig 관련 `
+        - master에서 id_rsa.pub가져오기
+            - `mkdir ~/.ssh`
+            - `chmod 700 ~/.ssh`
+            - `scp {USER}@ipaddress:.ssh/id_rsa.pub ~/.ssh/authorized_keys`
+            - `chmod 644 ~/.ssh/authorized_keys`
         - powersell용 스크립트 파일을 생성하여 작업 스캐줄러에 등록
             - [wslbridge.ps1](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/wslbridge.ps1) 파일에 저장
 
@@ -179,7 +184,7 @@
             ```
             chmod 700 ~/.ssh
             chmod 600 ~/.ssh/id_rsa
-            chmod 644 ~/.ssh/id_ras.pub
+            chmod 644 ~/.ssh/id_rsa.pub
             chmod 644 ~/.ssh/authorized_keys
             chmod 644 ~/.ssh/known_hosts
             ```
