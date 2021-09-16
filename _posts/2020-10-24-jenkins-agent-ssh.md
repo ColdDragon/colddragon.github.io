@@ -6,7 +6,7 @@
 
 - agent에서 ssh 설정
     - agent 서버의 ssh 서비스가 구동되는 상태에서 master에서 연결할 수 있도록 진행
-    - Windows 10의 Openssh 서비스를 이용([https://lucidmaj7.tistory.com/178](https://lucidmaj7.tistory.com/178))
+    - [Windows 10의 Openssh 서비스를 이용](https://lucidmaj7.tistory.com/178)
         - Windows **설정**에서 **앱**으로 진입
 
             ![jenkins_ssh_res/Untitled.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled.png){: width="100%" height="100%"}
@@ -36,7 +36,7 @@
             C:\>Start-Service -Name sshd
             C:\>Set-Service -Name sshd -StartupType 'Automatic'
             ```
-    - public key인증 방식으로 변경([https://medium.com/beyond-the-windows-korean-edition/windows-10-네이티브-방식으로-ssh-서버-설정하기-64988d87349](https://medium.com/beyond-the-windows-korean-edition/windows-10-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C-ssh-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-64988d87349))
+    - [public key인증 방식으로 변경](https://medium.com/beyond-the-windows-korean-edition/windows-10-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C-ssh-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-64988d87349)
         - powershell을 관리자 권한으로 실행한 상태에서 진행
         - `notepad.exe $env:PROGRAMDATA\ssh\sshd_config`
             - 아래 값들의 주석을 제거하고 변경
@@ -80,14 +80,15 @@
                     - Remote root directory 경로가 C드라이드(윈도우 설치 경로)인 경우는 필요가 없지만 다른 드라이브를 사용할 경우 powershell command를 직접 수정하여 등록
                     - `powershell -Command "chcp 65001 ; cd **d:\Jenkins** ; java -jar remoting.jar -workDir **d:\Jenkins** -jar-cache **d:\Jenkins/remoting/jarCache**" ; exit 0 ; rem`
 
-    - WSL2에서 ssh설정(Ubuntu v18.04) - ([https://parksb.github.io/article/21.html](https://parksb.github.io/article/21.html), [https://m.blog.naver.com/seongjin0526/221778212779](https://m.blog.naver.com/seongjin0526/221778212779))
-        - WSL2 설치 : https://www.44bits.io/ko/post/wsl2-install-and-basic-usage
+    - [WSL2에서 ssh설정(Ubuntu v18.04)](https://parksb.github.io/article/21.html)
+        - [https://m.blog.naver.com/seongjin0526/221778212779](https://m.blog.naver.com/seongjin0526/221778212779)
+        - [WSL2 설치](https://www.44bits.io/ko/post/wsl2-install-and-basic-usage)
             - `sudo echo "jenkins_agent ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers`
             - `sudo apt update`
             - `sudo apt upgrade`
             - `sudo apt-get install openjdk-8-jdk`
             - `sudo apt install net-tools`
-        - WSL에서 ssh설치 : https://www.tuwlab.com/ece/29302
+        - [WSL에서 ssh설치](https://www.tuwlab.com/ece/29302)
         - hyper-V를 통해 내부 포트가 지정되고 부팅시마다 포트가 변경되어 자동으로 포트 포워딩을 해야 함
         - `sudo vi /etc/ssh/sshd_config`
             - `Port 2022` : Windows가 점유한 22포트와 충돌나기 때문에 2022로 변경
@@ -143,8 +144,8 @@
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/Untitled%209.png){: width="100%" height="100%"}
                 - 로그인한 사용자로 설정하고 암호를 입력해야함
                     ![jenkins_ssh_res/Untitled%209.png](https://raw.githubusercontent.com/ColdDragon/colddragon.github.io/master/_posts/jenkins_ssh_res/jobscheduler.png){: width="100%" height="100%"}
-                - 일괄 작업으로 로그온 설정                                https://urban1980.tistory.com/42#:~:text=%EC%9D%BC%EB%8B%A8%20%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC%20%3E%20%EB%A1%9C%EC%BB%AC%EB%B3%B4%EC%95%88,%EC%9D%84%20%ED%9A%8D%EB%93%9D%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.
-                - 서비스로 로그온 설정 : https://help.tableau.com/current/server/ko-kr/runas_security.htm
+                - [일괄 작업으로 로그온 설정](https://urban1980.tistory.com/42#:~:text=%EC%9D%BC%EB%8B%A8%20%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC%20%3E%20%EB%A1%9C%EC%BB%AC%EB%B3%B4%EC%95%88,%EC%9D%84%20%ED%9A%8D%EB%93%9D%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
+                - [서비스로 로그온 설정](https://help.tableau.com/current/server/ko-kr/runas_security.htm)
 
         - jenkins agent 설정
             - 기본 설정
