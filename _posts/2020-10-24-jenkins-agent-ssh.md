@@ -101,7 +101,7 @@
             - `sudo apt-get install openssh-server`
             - `sudo nano /etc/ssh/sshd_config`
                 ```
-                Port 22
+                Port 2022
                 PasswordAuthentication yes
                 PubkeyAuthentication no
                 PermitEmptyPasswords no
