@@ -5,7 +5,7 @@
 
 - Download
   1. Install depot_tools and Git
-	  -  `bash-3.2$ git clone 'https://chromium.googlesource.com/chromium/tools/depot_tools.git'`
+	  - `bash-3.2$ git clone 'https://chromium.googlesource.com/chromium/tools/depot_tools.git'`
 	  - `bash-3.2$ export PATH="${PWD}/depot_tools:${PATH}"` 
   2. Clone the Skia repository
 	  - `bash-3.2$ git clone https://skia.googlesource.com/skia.git`
