@@ -36,6 +36,11 @@
             C:\>Start-Service -Name sshd
             C:\>Set-Service -Name sshd -StartupType 'Automatic'
             ```
+    - JDK 설치
+        - 라이선스 이슈없고 성능이 좋은 zulu를 설치
+        - [Zulu JDK21](https://www.azul.com/downloads/?version=java-21-lts&os=windows&architecture=x86-64-bit&package=jdk#zulu)
+        - 설치 후 리부팅하여 시스템 설정 적용
+         
     - [public key인증 방식으로 변경](https://medium.com/beyond-the-windows-korean-edition/windows-10-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C-ssh-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-64988d87349)
         - powershell을 관리자 권한으로 실행한 상태에서 진행
         - `notepad.exe $env:PROGRAMDATA\ssh\sshd_config`
@@ -45,11 +50,11 @@
                 PasswordAuthentication no
                 PermitEmptyPasswords no
                 ```
-            - $HOME\.ssh\authorized_keys 파일을 사용하는 방식으로 변경하기 위해 아래 내용을 주석 처리(#)
-                ```
+            - ~~$HOME\.ssh\authorized_keys 파일을 사용하는 방식으로 변경하기 위해 아래 내용을 주석 처리(#)~~
+                ~~```~~
                 #Match Group administrators
                 #AuthorizedKeysFile **PROGRAMDATA**/ssh/administrators_authorized_keys
-                ```
+                ~~```~~
             - $ALLUSERSPROFILE\\ssh\\administrators_authorized_keys 권한 변경
                 ```powershell
                 $authorizedKeyFilePath = "$env:ALLUSERSPROFILE\\ssh\\administrators_authorized_keys"
@@ -59,9 +64,9 @@
                 icacls.exe $authorizedKeyFilePath /inheritance:r
                 Get-Acl "$env:ProgramData\\ssh\\ssh_host_dsa_key" | Set-Acl $authorizedKeyFilePath
                 ```
-        - .ssh경로 생성, authorized_keys 파일 생성 및 권한 변경
+        - ~~.ssh경로 생성, authorized_keys 파일 생성 및 권한 변경~~
 
-            ```powershell
+            ~~```~~powershell
             mkdir "$HOME\.ssh"
             $authorizedKeyFilePath = "$HOME\\.ssh\\authorized_keys"
             New-Item $authorizedKeyFilePath
@@ -69,7 +74,7 @@
             icacls.exe $authorizedKeyFilePath /remove "NT AUTHORITY\\Authenticated Users"
             icacls.exe $authorizedKeyFilePath /inheritance:r
             Get-Acl "$env:ProgramData\\ssh\\ssh_host_dsa_key" | Set-Acl $authorizedKeyFilePath
-            ```
+            ~~```~~
 
         - jenkins agent 설정
             - Jenkins >> Jenkins 관리 >> 노드 관리 >> 신규 노드
