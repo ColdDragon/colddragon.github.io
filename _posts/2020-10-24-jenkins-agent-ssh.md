@@ -50,16 +50,25 @@
                 #Match Group administrators
                 #AuthorizedKeysFile **PROGRAMDATA**/ssh/administrators_authorized_keys
                 ```
+            - $ALLUSERSPROFILE\\ssh\\administrators_authorized_keys 권한 변경
+                ```
+                $authorizedKeyFilePath = "$env:ALLUSERSPROFILE\\ssh\\administrators_authorized_keys"
+                New-Item $authorizedKeyFilePath
+                notepad.exe $authorizedKeyFilePath
+                icacls.exe $authorizedKeyFilePath /remove "NT AUTHORITY\\Authenticated Users"
+                icacls.exe $authorizedKeyFilePath /inheritance:r
+                Get-Acl "$env:ProgramData\\ssh\\ssh_host_dsa_key" | Set-Acl $authorizedKeyFilePath
+                ```
         - .ssh경로 생성, authorized_keys 파일 생성 및 권한 변경
 
             ```powershell
             mkdir "$HOME\.ssh"
-            $authorizedKeyFilePath = "$HOME\.ssh\authorized_keys"
+            $authorizedKeyFilePath = "$HOME\\.ssh\\authorized_keys"
             New-Item $authorizedKeyFilePath
             notepad.exe $authorizedKeyFilePath
-            icacls.exe $authorizedKeyFilePath /remove "NT AUTHORITY\Authenticated Users"
+            icacls.exe $authorizedKeyFilePath /remove "NT AUTHORITY\\Authenticated Users"
             icacls.exe $authorizedKeyFilePath /inheritance:r
-            Get-Acl "$env:ProgramData\ssh\ssh_host_dsa_key" | Set-Acl $authorizedKeyFilePath
+            Get-Acl "$env:ProgramData\\ssh\\ssh_host_dsa_key" | Set-Acl $authorizedKeyFilePath
             ```
 
         - jenkins agent 설정
