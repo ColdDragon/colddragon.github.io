@@ -51,7 +51,7 @@
                 #AuthorizedKeysFile **PROGRAMDATA**/ssh/administrators_authorized_keys
                 ```
             - $ALLUSERSPROFILE\\ssh\\administrators_authorized_keys 권한 변경
-                ```
+                ```powershell
                 $authorizedKeyFilePath = "$env:ALLUSERSPROFILE\\ssh\\administrators_authorized_keys"
                 New-Item $authorizedKeyFilePath
                 notepad.exe $authorizedKeyFilePath
