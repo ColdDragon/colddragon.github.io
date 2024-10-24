@@ -53,8 +53,6 @@
             - $ALLUSERSPROFILE\\ssh\\administrators_authorized_keys 권한 변경
                 ```powershell
                 $authorizedKeyFilePath = "$env:ALLUSERSPROFILE\\ssh\\administrators_authorized_keys"
-                New-Item $authorizedKeyFilePath
-                notepad.exe $authorizedKeyFilePath
                 icacls.exe $authorizedKeyFilePath /remove "NT AUTHORITY\\Authenticated Users"
                 icacls.exe $authorizedKeyFilePath /inheritance:r
                 Get-Acl "$env:ProgramData\\ssh\\ssh_host_dsa_key" | Set-Acl $authorizedKeyFilePath
